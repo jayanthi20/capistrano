@@ -41,11 +41,13 @@
 #   }
 server 'dev.cherrywork.in', user: 'ubuntu', roles: %w{app}
 
+set :tmp_dir, "/home/ubuntu/tmp"
+
 role :app, %w{ubuntu@dev.cherrywork.in}
 
 set :deploy_to, "/home/ubuntu/test/#{fetch(:application)}"
 
-set :pty, true
+set :tty, true
 
 set :ssh_options, {
   forward_agent: true,

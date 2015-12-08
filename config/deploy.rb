@@ -46,11 +46,8 @@ namespace :deploy do
 
       within release_path do
 
- #execute "screen","-dm","#{fetch(:application)}"
- #execute "screen","-S","test123","-dm","npm","start"
- execute "sudo","npm", "start"
-
-      end
+ execute "screen","-dm","-S","#{fetch(:application)}","npm","start"
+       end
 
     end
 
