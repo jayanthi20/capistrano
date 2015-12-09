@@ -4,7 +4,7 @@ server "#{fetch(:server_name)}", user: "#{fetch(:user_name)}", roles: %w{app}
 
 set :role_path, "#{fetch(:user_name)}@#{fetch(:server_name)}"
 
-role :app, %w{"#{fetch(:role_path)}
+role :app, "#{fetch(:role_path)}"
 
 set :deploy_to, "/home/#{fetch(:user_name)}/test/#{fetch(:application)}"
 
